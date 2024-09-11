@@ -1,0 +1,31 @@
+<?php
+
+function specbee_preprocess_block(&$variables) {
+  // dump($variables);
+  if (!empty($variables['elements']['content']['#block_content'])) {
+    $bundle = $variables['elements']['content']['#block_content']->bundle();
+  }
+ 
+  if ($bundle == 'conferences') {
+    $tab_items = [];
+    if (isset($variables['content']['field_conferences']) && is_object($variables['content']['field_conferences']['#items'])) {
+      $items = $variables['content']['field_conferences']['#items']->referencedEntities();
+      foreach ($items as $item) {
+        $tab_data = [];
+        $tab_data['title'] = $item->field_tab_name->value;
+        $tab_data['data'] = $item->get('field_conference_items')->referencedEntities();
+        $tab_items[] = $tab_data;
+      }
+    }
+    $variables['tabs_items'] = $tab_items;
+  }
+
+}
+
+function specbee_theme_suggestions_block_alter(array &$suggestions, array $variables)
+{
+  // Block suggestions for custom block bundles.
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__block_content__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}

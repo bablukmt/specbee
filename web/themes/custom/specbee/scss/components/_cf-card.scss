@@ -1,0 +1,137 @@
+.cf-card {
+  border: solid 0.1rem $color-gray;
+  overflow: hidden;
+  border-radius: 0.4rem;
+  @include transition;
+
+  &:hover {
+    box-shadow: 0.4rem 0.4rem 1rem 0 rgba(0, 0, 0, 0.4);
+    .cf-card__content--wrapper  {
+      transform: translateY(-5.2rem);
+    }
+    .cf-card__image img {
+      scale: 1.1;
+    }
+  }
+
+  &.On {
+    &:before {
+      content: '';
+      background: url(../../images/icons/featured.svg) no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      z-index: 1;
+    }
+  }
+
+  &__image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      @include transition;
+    }
+  }
+
+  &__content--wrapper {
+    position: relative;
+    @include transition;
+  }
+
+  &__content {
+    padding: 2rem 3rem;
+    background-color: $color-white;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: $color-gray-s2;
+  }
+
+  &__heading {
+    margin: 0 0 1.6rem;
+    color: $color-gray-s3;
+    text-decoration: none;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+  }
+
+  &__tags,
+  &__date,
+  &__location {
+    line-height: 1.7rem;
+    margin-bottom: 0.8rem;
+  }
+
+  &__tags {
+    background: url(../../images/icons/tags.svg) no-repeat;
+    padding-left: 2.4rem;
+
+    > * {
+      display: inline-flex;
+      flex-wrap: wrap;
+      > *:not(:last-child) {
+        margin-right: 0.5rem;
+        &:after {
+          content: ', ';
+        }
+      }
+    }
+  }
+
+  &__date {
+    background: url(../../images/icons/date.svg) no-repeat;
+    padding-left: 2.8rem;
+  }
+
+  &__location {
+    background: url(../../images/icons/location.svg) no-repeat;
+    padding-left: 1.8rem;
+    margin-bottom: 0;
+  }
+
+  &__links {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    border-top: solid 0.2rem $color-gray;
+    .links {
+      a {
+        padding: 1rem 2.4rem;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        min-height: 5rem;
+        * {
+          @include transition;
+        }
+        &:hover svg path {
+          fill: $color-blue;
+        }
+      }
+      &:not(:last-child) {
+        border-right: solid 0.1rem $color-gray;
+      }
+      &.view-more {
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 0;
+        a {
+          display: inline-flex;
+          padding: 0 2.4rem;
+          width: 100%;
+          line-height: 1.9rem;
+          justify-content: center;
+          text-decoration: none;
+          font-size: 1.6rem;
+          color: $color-blue;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+
+}

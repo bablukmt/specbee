@@ -1,0 +1,27 @@
+type: theme
+name: Specbee Assignment
+description: Custom Theme for Specbee
+logo: 'logo.svg'
+
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+base theme: stable9
+package: Specbee
+
+libraries:
+  - specbee/main
+
+stylesheets-remove:
+  - core/assets/vendor/normalize-css/normalize.css
+  - core/themes/classy/css/components/form.css
+  - core/themes/classy/css/components/inline-form.css
+  - core/themes/stable/css/system/components/container-inline.module.css
+  - core/themes/stable/css/filter/filter.caption.css
+
+regions:
+  header: "Header"
+  breadcrumb: Breadcrumb
+  help: "Help"
+  content: "Content"
+  footer: "Footer"
+  hidden: "Hidden (not output)"

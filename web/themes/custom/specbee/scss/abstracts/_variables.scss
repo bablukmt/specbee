@@ -1,0 +1,39 @@
+/**
+ * @file
+ * Variables
+ * 
+ * Contains global variables available to the theme.
+ */
+
+//
+// Fonts
+//
+
+/// Arial
+// $font-arial: Arial, Helvetica, sans-serif;
+
+$Montserrat: 'Montserrat', sans-serif;
+
+//
+// Breakpoints
+//
+$break-xxl-large:1401px;
+$break-x-large: 1201px;
+$break-large: 1025px;
+$break-x-medium: 850px;
+$break-medium: 700px;
+
+// Content
+$content-max: 1920px;
+
+//
+// Colors
+//
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-gray: #ECECEC;
+$color-gray-s2: #7C8993;
+$color-gray-s3: #424A55;
+$color-gray-s4: #9BA5AC;
+$color-blue: #0B80CF;
+$color-blue-s2: #017FD5;

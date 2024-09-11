@@ -1,0 +1,47 @@
+/**
+ * @file
+ * Base theme styles
+ */
+
+html {
+  font-size: 10px;
+  overflow-x: hidden;
+
+  &.overflow-hidden {
+    overflow: hidden;
+
+    body {
+      overflow: hidden;
+      position: relative;
+      height: 100%;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  font-family: $Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 3rem;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  // Fixed class to prevent scrolling
+  &.js-fixed {
+    overflow: hidden;
+  }
+}
+
+
+// Remove margin on last elements
+* > {
+  p:last-child,
+  ul:last-child,
+  ol:last-child {
+    margin-bottom: 0;
+  }
+}

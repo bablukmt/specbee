@@ -1,0 +1,18 @@
+/**
+ * @file
+ * Print specific styliing
+ */
+
+@media print {
+  .footer {
+    display: none;
+  }
+
+  .accordion__content {
+    display: block !important;
+  }
+
+  #block-nhcc-theme-branding {
+    display: block;
+  }
+}

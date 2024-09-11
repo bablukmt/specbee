@@ -1,0 +1,15 @@
+main:
+  css:
+    theme:
+      build/css/main.css: { } # Development
+      # css/main.min.css: { } # Production
+  js:
+    //cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.0/slick.min.js: { type: external }
+
+conference-carousel:
+  js:
+    build/js/paragraphs/conference-carousel.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/once

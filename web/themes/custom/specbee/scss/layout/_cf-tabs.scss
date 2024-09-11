@@ -1,0 +1,22 @@
+.cf-tab {
+  &__header {
+    text-align: center;
+    margin-bottom: 8.7rem;
+    &--heading {
+      font-size: 3.6rem;
+      font-weight: 400;
+      line-height: 4.4rem;
+      font-family: $Montserrat;
+      margin-bottom: 1rem;
+      color: $color-gray-s3;
+    }
+
+    &--description {
+      font-size: 1.8rem;
+      font-weight: 400;
+      line-height: 2.2rem;
+      color: $color-gray-s2;
+      font-family: $Montserrat;
+    }
+  }
+}

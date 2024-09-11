@@ -1,0 +1,93 @@
+/**
+ * @file
+ * Mixins
+ *
+ * Contains global SCSS mixins
+ */
+
+/// Clearfix
+@mixin clearfix() {
+  &:after {
+    display: table;
+    content: '';
+    clear: both;
+  }
+}
+
+/// Image replacement
+@mixin ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 0; // Remove the default border from elements like <button>
+  font: 0/0 a; // Crush the text down to take up no space
+  text-shadow: none; // Remove any text shadows
+  color: transparent; // Hide any residual text in Safari 4 and any mobile devices that may need it
+  background-color: transparent; // Hide the default background color on elements like <button>
+}
+
+/// Invisible elements
+@mixin element-invisible {
+  border: 0;
+  height: 0.1rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 0.1rem;
+  clip: rect(0.1rem, 0.1rem, 0.1rem, 0.1rem);
+}
+
+/// Show an invisible element
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+/// Show invisible element when focused
+@mixin element-focusable {
+  @include element-invisible;
+
+  &:active,
+  &:focus {
+    @include element-invisible-off;
+  }
+}
+
+/// Full width mixin to break content out into gutters
+@mixin full-width() {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+}
+
+/// Content Gutter
+@mixin gutter {
+  padding-left: 2rem;
+  padding-right: 2rem;
+
+  @media screen and (min-width: $break-medium) {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  @media screen and (min-width: $break-xxl-large) {
+    padding-left: 14rem;
+    padding-right: 14rem;
+  }
+}
+
+/// Maximum width Object
+@mixin content-full {
+  max-width: $content-max;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/// Site transition
+@mixin transition {
+  transition: all ease 0.3s;
+}

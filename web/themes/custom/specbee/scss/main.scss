@@ -1,0 +1,21 @@
+/**
+ * @file
+ * CSS output file
+ *
+ * Combine all theme scss into a single CSS file
+ */
+
+@import 'abstracts/_variables';
+@import 'abstracts/_mixins';
+
+@import 'vendors/_slick';
+
+@import 'base/_normalize';
+@import 'base/_fonts';
+@import 'base/_base';
+@import 'base/_print';
+
+@import 'interface/_tabs';
+@import 'components/_cf-card';
+
+@import 'layout/_cf-tabs';
