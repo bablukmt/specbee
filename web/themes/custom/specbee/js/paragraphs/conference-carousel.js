@@ -41,12 +41,15 @@ const homeEvents = $ => {
           });
         });
       }
+      $('.nav-tabs__content--items').slick('setPosition');
       $(`button.nav-tabs__btn[data-tab="tab-0"]`).addClass('active');
       $(`#tab-0`).addClass('active').siblings().removeClass('active');
     }
 
-    function tabsToggle(context) {
-      $('.nav-tabs__content--items').slick('setPosition');
+    function tabsToggle() {
+      setTimeout(function() {
+        $('.nav-tabs__content--items').slick('setPosition');
+    }, 1); // Adjust the timeout as needed
       var tabID = $(this).attr('data-tab');
       $(this).addClass('active').siblings().removeClass('active');
       $(`#${tabID}`).addClass('active').siblings().removeClass('active');

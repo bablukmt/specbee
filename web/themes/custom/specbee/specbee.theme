@@ -1,7 +1,7 @@
 <?php
 
 function specbee_preprocess_block(&$variables) {
-  // dump($variables);
+  $bundle = '';
   if (!empty($variables['elements']['content']['#block_content'])) {
     $bundle = $variables['elements']['content']['#block_content']->bundle();
   }
